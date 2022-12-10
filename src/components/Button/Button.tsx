@@ -3,8 +3,11 @@ import { ButtonStyle } from './Button.style';
 
 type ButtonProps = {
   children: React.ReactNode;
+  className?: string;
 };
 
 export function Button(props: ButtonProps): ReactElement {
-  return <ButtonStyle>{props.children}</ButtonStyle>;
+  return (
+    <ButtonStyle className={props.className}>{props.children}</ButtonStyle>
+  );
 }
