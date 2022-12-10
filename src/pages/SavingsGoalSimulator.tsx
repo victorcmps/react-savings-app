@@ -1,11 +1,22 @@
-import { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { Amount } from '../components/Amount/Amount';
 import buyAHouseIcon from '../assets/icons/buy-a-house.svg';
 import { ReachDate } from '../components/ReachDate/ReachDate';
 import { MonthlyAmount } from '../components/MonthlyAmount/MonthlyAmount';
 import * as Styles from './SavingsGoalSimulator.styles';
+import { getNextOrPrevDate } from '../utils/dates';
 
 export function SavingsGoalSimulator(): ReactElement {
+  const [date, setDate] = useState(getNextOrPrevDate(new Date(), false));
+  const [monthCounter, setMonthCounter] = useState(1);
+
+  const handleMonthChange = (isPreviousMonth: boolean) => {
+    setDate(getNextOrPrevDate(date, isPreviousMonth));
+    isPreviousMonth
+      ? setMonthCounter(monthCounter - 1)
+      : setMonthCounter(monthCounter + 1);
+  };
+
   return (
     <Styles.Wrapper>
       <Styles.Title>
@@ -22,9 +33,12 @@ export function SavingsGoalSimulator(): ReactElement {
         <Styles.Form name="savingsGoal">
           <Styles.InputWrapper>
             <Amount />
-            <ReachDate />
+            <ReachDate value={date} handleMonthChange={handleMonthChange} />
           </Styles.InputWrapper>
-          <MonthlyAmount></MonthlyAmount>
+          <MonthlyAmount
+            monthCounter={monthCounter}
+            date={date}
+          ></MonthlyAmount>
           <Styles.FormButton>Confirm</Styles.FormButton>
         </Styles.Form>
       </Styles.CardSimulator>

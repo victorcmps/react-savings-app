@@ -1,4 +1,5 @@
 import { ReactElement } from 'react';
+import { formatMonth } from '../../utils/dates';
 import {
   AmountInfo,
   StyledMonthlyAmount,
@@ -8,7 +9,13 @@ import {
   AmountDetailText,
 } from './MonthlyAmount.style';
 
-export function MonthlyAmount(): ReactElement {
+type MonthlyAmountProps = {
+  date: Date;
+  amount?: number;
+  monthCounter: number;
+};
+
+export function MonthlyAmount(props: MonthlyAmountProps): ReactElement {
   return (
     <StyledMonthlyAmount>
       <AmountInfo>
@@ -17,8 +24,13 @@ export function MonthlyAmount(): ReactElement {
       </AmountInfo>
       <AmountDetail>
         <AmountDetailText>
-          You’re planning <strong>48 monthly deposits</strong> to reach your{' '}
-          <strong>$25,000 goal</strong> by <strong>October 2020</strong>.
+          You&apos;re planning{' '}
+          <strong>{props.monthCounter} monthly deposits</strong> to reach your{' '}
+          <strong>$25,000 goal</strong> by{' '}
+          <strong>
+            {formatMonth(props.date)} {props.date.getFullYear()}
+          </strong>
+          .
         </AmountDetailText>
       </AmountDetail>
     </StyledMonthlyAmount>
