@@ -7,7 +7,7 @@ export const CardStyle = styled.div`
   border-radius: 8px;
   display: block;
   padding: 0 40px;
-  width: 100%;
+  width: 100vw;
 
   @media (min-width: 992px) {
     width: 560px;
