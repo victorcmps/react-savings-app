@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ColorTokens } from '../../shared/styles/tokens/colors';
+import { color, fontFamily } from '../../shared/styles/tokens';
 
 export const AmountWrapper = styled.label`
   display: flex;
@@ -7,11 +7,11 @@ export const AmountWrapper = styled.label`
 `;
 
 export const Label = styled.label`
-  font-family: 'Work Sans';
+  font-family: ${fontFamily.workSans};
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: ${ColorTokens.blueGray900};
+  color: ${color.blueGray900};
   margin-bottom: 4px;
 `;
 
@@ -28,7 +28,7 @@ export const Icon = styled.img`
 `;
 
 export const Input = styled.input`
-  border: 1px solid ${ColorTokens.blueGray50};
+  border: 1px solid ${color.blueGray50};
   padding-left: 44px;
   padding-right: 12px;
   font-family: 'Rubik', sans-serif;
@@ -37,7 +37,7 @@ export const Input = styled.input`
   line-height: 120%;
   height: 56px;
   border-radius: 4px;
-  color: ${ColorTokens.blueGray600};
+  color: ${color.blueGray600};
   width: 100%;
 
   @media (min-width: 992px) {

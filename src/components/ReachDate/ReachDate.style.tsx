@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ColorTokens } from '../../shared/styles/tokens/colors';
+import { color, fontFamily } from '../../shared/styles/tokens';
 
 export const StyledReachDate = styled.div`
   display: flex;
@@ -7,11 +7,11 @@ export const StyledReachDate = styled.div`
 `;
 
 export const Label = styled.label`
-  font-family: 'Work Sans';
+  font-family: ${fontFamily.workSans};
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: ${ColorTokens.blueGray900};
+  color: ${color.blueGray900};
   margin-bottom: 4px;
 `;
 
@@ -19,14 +19,14 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid ${ColorTokens.blueGray50};
+  border: 1px solid ${color.blueGray50};
   font-family: 'Rubik', sans-serif;
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
   height: 56px;
   border-radius: 4px;
-  color: ${ColorTokens.blueGray600};
+  color: ${color.blueGray600};
   width: 100%;
 
   @media (min-width: 992px) {
@@ -47,7 +47,7 @@ export const Button = styled.span`
 export const DateWrapper = styled.span`
   display: flex;
   flex-direction: column;
-  font-family: 'Work Sans';
+  font-family: ${fontFamily.workSans};
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
@@ -55,10 +55,10 @@ export const DateWrapper = styled.span`
 `;
 
 export const Month = styled.p`
-  color: ${ColorTokens.blueGray900};
+  color: ${color.blueGray900};
   font-weight: 600;
 `;
 
 export const Year = styled.p`
-  color: ${ColorTokens.blueGray400};
+  color: ${color.blueGray400};
 `;

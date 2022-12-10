@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { ColorTokens } from './shared/styles/tokens/colors';
+import { color, fontFamily } from './shared/styles/tokens';
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Work Sans', sans-serif;
-    background-color: ${ColorTokens.blueGray10};
+    font-family: ${fontFamily.workSans}, sans-serif;
+    background-color: ${color.blueGray10};
   }
 `;

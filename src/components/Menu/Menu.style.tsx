@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { ColorTokens } from '../../shared/styles/tokens/colors';
+import { color } from '../../shared/styles/tokens';
 
 export const Navbar = styled.div`
   padding: 16px;
-  background-color: ${ColorTokens.neutralWhite};
+  background-color: ${color.neutralWhite};
   margin-bottom: 32px;
   height: 56px;
 

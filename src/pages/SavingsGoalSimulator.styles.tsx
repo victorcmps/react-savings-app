@@ -1,6 +1,6 @@
 import { Button } from '../components/Button/Button';
 import styled from 'styled-components';
-import { ColorTokens } from '../shared/styles/tokens/colors';
+import { color, fontFamily } from '../shared/styles/tokens';
 import { Card } from '../components/Card/Card';
 
 export const Wrapper = styled.section`
@@ -9,16 +9,27 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.h1`
-  font-family: 'Work Sans';
+  font-family: ${fontFamily.workSans};
+  font-style: normal;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 120%;
+  color: ${color.brandColorPrimary};
   margin-bottom: 24px;
-  color: ${ColorTokens.brandColorPrimary};
+
+  @media (min-width: 992px) {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+  }
 `;
 
 export const CardSimulator = styled(Card)`
-  padding: 32px 40px 40px 40px;
+  padding: 24px 24px 40px 24px;
+
+  @media (min-width: 992px) {
+    padding: 32px 40px 40px 40px;
+  }
 `;
 
 export const CardTitleWrapper = styled.div`
@@ -33,16 +44,16 @@ export const CardTitle = styled.h2`
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
-  color: ${ColorTokens.blueGray900};
+  color: ${color.blueGray900};
   margin-bottom: 4px;
 `;
 
 export const CardSubtitle = styled.p`
-  font-family: 'Work Sans';
+  font-family: ${fontFamily.workSans};
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: ${ColorTokens.blueGray400};
+  color: ${color.blueGray400};
 `;
 
 export const InputWrapper = styled.div`
