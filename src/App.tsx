@@ -1,5 +1,14 @@
 import React from 'react';
+import { Menu } from './components/Menu/Menu';
+import { SavingsGoalSimulator } from './pages/SavingsGoalSimulator';
+import GlobalStyle from './styles';
 
 export function App(): JSX.Element {
-  return <div data-testid="greetings-container">Welcome to the Origin THA</div>;
+  return (
+    <>
+      <GlobalStyle />
+      <Menu />
+      <SavingsGoalSimulator />
+    </>
+  );
 }
