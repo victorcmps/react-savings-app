@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
-import { ColorTokens } from './styles/colors';
+import { ColorTokens } from './shared/styles/tokens/colors';
 
-const globalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,5 +13,3 @@ const globalStyle = createGlobalStyle`
     background-color: ${ColorTokens.blueGray10};
   }
 `;
-
-export default globalStyle;
