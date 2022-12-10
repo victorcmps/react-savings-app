@@ -4,6 +4,9 @@ import { color, fontFamily } from '../../shared/styles/tokens';
 export const StyledReachDate = styled.div`
   display: flex;
   flex-direction: column;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 `;
 
 export const Label = styled.label`
@@ -34,6 +37,11 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const ButtonIcon = styled.img`
+  width: 24px;
+  height: 24px;
+`;
+
 export const Button = styled.span`
   background: white;
   border: 0;
@@ -42,6 +50,13 @@ export const Button = styled.span`
   height: 100%;
   display: flex;
   place-items: center;
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    ${ButtonIcon} {
+      opacity: 0.2;
+    }
+  }
 `;
 
 export const DateWrapper = styled.span`
