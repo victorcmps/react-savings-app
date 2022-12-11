@@ -3,45 +3,51 @@ import { Amount } from '../components/Amount/Amount';
 import buyAHouseIcon from '../assets/icons/buy-a-house.svg';
 import { ReachDate } from '../components/ReachDate/ReachDate';
 import { MonthlyAmount } from '../components/MonthlyAmount/MonthlyAmount';
-import * as Styles from './SavingsGoalSimulator.styles';
-import { getNextOrPrevDate } from '../utils/dates';
+import * as SC from './SavingsGoalSimulator.styles';
+import { getNextOrPrevDate } from '../utils';
 
 export function SavingsGoalSimulator(): ReactElement {
   const [date, setDate] = useState(getNextOrPrevDate(new Date(), false));
   const [monthCounter, setMonthCounter] = useState(1);
+  const [amount, setAmount] = useState(25000);
 
-  const handleMonthChange = (isPreviousMonth: boolean) => {
+  const onMonthChange = (isPreviousMonth: boolean) => {
     setDate(getNextOrPrevDate(date, isPreviousMonth));
     isPreviousMonth
       ? setMonthCounter(monthCounter - 1)
       : setMonthCounter(monthCounter + 1);
   };
 
+  const onAmountChange = (amount: number) => {
+    setAmount(amount);
+  };
+
   return (
-    <Styles.Wrapper>
-      <Styles.Title>
+    <SC.Wrapper>
+      <SC.Title>
         Let&apos;s plan your <strong>saving goal.</strong>
-      </Styles.Title>
-      <Styles.CardSimulator>
-        <Styles.CardTitleWrapper>
+      </SC.Title>
+      <SC.CardSimulator>
+        <SC.CardTitleWrapper>
           <img width={64} height={64} src={buyAHouseIcon} alt="Buy a house" />
           <span>
-            <Styles.CardTitle>Buy a house</Styles.CardTitle>
-            <Styles.CardSubtitle>Saving goal</Styles.CardSubtitle>
+            <SC.CardTitle>Buy a house</SC.CardTitle>
+            <SC.CardSubtitle>Saving goal</SC.CardSubtitle>
           </span>
-        </Styles.CardTitleWrapper>
-        <Styles.Form name="savingsGoal">
-          <Styles.InputWrapper>
-            <Amount />
-            <ReachDate value={date} handleMonthChange={handleMonthChange} />
-          </Styles.InputWrapper>
+        </SC.CardTitleWrapper>
+        <SC.Form name="savingsGoal">
+          <SC.InputWrapper>
+            <Amount amount={amount} onAmountChange={onAmountChange} />
+            <ReachDate value={date} onMonthChange={onMonthChange} />
+          </SC.InputWrapper>
           <MonthlyAmount
             monthCounter={monthCounter}
             date={date}
+            amount={amount}
           ></MonthlyAmount>
-          <Styles.FormButton>Confirm</Styles.FormButton>
-        </Styles.Form>
-      </Styles.CardSimulator>
-    </Styles.Wrapper>
+          <SC.FormButton>Confirm</SC.FormButton>
+        </SC.Form>
+      </SC.CardSimulator>
+    </SC.Wrapper>
   );
 }
