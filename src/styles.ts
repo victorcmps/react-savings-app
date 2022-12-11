@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import { color, fontFamily } from './shared/styles/tokens';
 
 export const GlobalStyle = createGlobalStyle`
 * {
@@ -9,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${fontFamily.workSans}, sans-serif;
-    background-color: ${color.blueGray10};
+    font-family: ${(props) => props.theme.font.workSans};
+    background-color: ${(props) => props.theme.color.blueGray10};
   }
 `;
