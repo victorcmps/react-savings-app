@@ -29,7 +29,7 @@ export function SavingsGoalSimulator(): ReactElement {
       </SC.Title>
       <SC.CardSimulator>
         <SC.CardTitleWrapper>
-          <img width={64} height={64} src={buyAHouseIcon} alt="Buy a house" />
+          <img width={64} height={64} src={buyAHouseIcon} alt="" aria-hidden />
           <span>
             <SC.CardTitle>Buy a house</SC.CardTitle>
             <SC.CardSubtitle>Saving goal</SC.CardSubtitle>

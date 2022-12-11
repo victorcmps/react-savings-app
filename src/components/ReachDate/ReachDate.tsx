@@ -48,7 +48,11 @@ export function ReachDate(props: ReachDateProps): ReactElement {
             alt=""
           />
         </SC.Button>
-        <SC.DateWrapper>
+        <SC.DateWrapper
+          aria-atomic="true"
+          aria-relevant="additions"
+          aria-live="polite"
+        >
           <SC.Month>{formatMonth(props.value)}</SC.Month>
           <SC.Year>{props.value.getFullYear()}</SC.Year>
           <input
