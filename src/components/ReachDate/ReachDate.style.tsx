@@ -10,12 +10,15 @@ export const StyledReachDate = styled.div`
 `;
 
 export const Label = styled.label`
-  font-family: ${fontFamily.workSans};
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 150%;
   color: ${color.blueGray900};
   margin-bottom: 4px;
+
+  @media (min-width: 992px) {
+    font-size: 14px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -23,7 +26,6 @@ export const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   border: 1px solid ${color.blueGray50};
-  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
@@ -62,11 +64,13 @@ export const Button = styled.span`
 export const DateWrapper = styled.span`
   display: flex;
   flex-direction: column;
-  font-family: ${fontFamily.workSans};
-  font-size: 16px;
   font-weight: 400;
+  font-size: 14px;
   line-height: 150%;
   text-align: center;
+  @media (min-width: 992px) {
+    font-size: 16px;
+  }
 `;
 
 export const Month = styled.p`

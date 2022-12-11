@@ -9,7 +9,6 @@ export const Wrapper = styled.section`
 `;
 
 export const Title = styled.h1`
-  font-family: ${fontFamily.workSans};
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -35,25 +34,35 @@ export const CardSimulator = styled(Card)`
 export const CardTitleWrapper = styled.div`
   display: flex;
   gap: 16px;
-  margin-bottom: 24px;
   align-items: center;
+  margin-bottom: 16px;
+  @media (min-width: 992px) {
+    margin-bottom: 24px;
+  }
 `;
 
 export const CardTitle = styled.h2`
-  font-family: 'Rubik';
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 120%;
-  color: ${color.blueGray900};
+  font-family: ${fontFamily.rubik};
+  font-size: 20px;
   margin-bottom: 4px;
+  font-weight: 500;
+
+  @media (min-width: 992px) {
+    font-size: 24px;
+    line-height: 120%;
+    color: ${color.blueGray900};
+  }
 `;
 
 export const CardSubtitle = styled.p`
-  font-family: ${fontFamily.workSans};
   font-weight: 400;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 150%;
   color: ${color.blueGray400};
+
+  @media (min-width: 992px) {
+    font-size: 16px;
+  }
 `;
 
 export const InputWrapper = styled.div`

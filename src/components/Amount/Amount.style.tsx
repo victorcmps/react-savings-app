@@ -7,12 +7,15 @@ export const AmountWrapper = styled.label`
 `;
 
 export const Label = styled.label`
-  font-family: ${fontFamily.workSans};
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 150%;
   color: ${color.blueGray900};
   margin-bottom: 4px;
+
+  @media (min-width: 992px) {
+    font-size: 14px;
+  }
 `;
 
 export const InputWrapper = styled.span`
@@ -31,9 +34,9 @@ export const Input = styled.input`
   border: 1px solid ${color.blueGray50};
   padding-left: 44px;
   padding-right: 12px;
-  font-family: 'Rubik', sans-serif;
+  font-family: ${fontFamily.rubik};
   font-weight: 500;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 120%;
   height: 56px;
   border-radius: 4px;
@@ -42,5 +45,6 @@ export const Input = styled.input`
 
   @media (min-width: 992px) {
     width: 272px;
+    font-size: 24px;
   }
 `;
