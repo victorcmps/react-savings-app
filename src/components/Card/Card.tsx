@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { CardStyle } from './Card.style';
+import * as SC from './Card.style';
 
 type CardProps = {
   children: React.ReactNode;
@@ -7,5 +7,7 @@ type CardProps = {
 };
 
 export function Card(props: CardProps): ReactElement {
-  return <CardStyle className={props.className}>{props.children}</CardStyle>;
+  return (
+    <SC.CardStyle className={props.className}>{props.children}</SC.CardStyle>
+  );
 }

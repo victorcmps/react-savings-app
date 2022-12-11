@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { ButtonStyle } from './Button.style';
+import * as SC from './Button.style';
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -9,11 +9,11 @@ type ButtonProps = {
 
 export function Button(props: ButtonProps): ReactElement {
   return (
-    <ButtonStyle
+    <SC.ButtonStyle
       onClick={(event) => event.preventDefault()}
       className={props.className}
     >
       {props.children}
-    </ButtonStyle>
+    </SC.ButtonStyle>
   );
 }
