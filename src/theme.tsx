@@ -1,13 +1,13 @@
 import { DefaultTheme } from 'styled-components';
-import { color, fontFamily, spacing } from './shared/tokens';
+import * as Tokens from './shared/tokens';
 
 const defaultTheme: DefaultTheme = {
   color: {
-    ...color,
+    ...Tokens.color,
   },
-  font: { ...fontFamily },
+  font: { ...Tokens.fontFamily },
   spacing: {
-    ...spacing,
+    ...Tokens.spacing,
   },
 };
 
