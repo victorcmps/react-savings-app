@@ -1,6 +1,5 @@
 import { Button } from '../components/Button/Button';
 import styled from 'styled-components';
-import { color, fontFamily } from '../shared/styles/tokens';
 import { Card } from '../components/Card/Card';
 
 export const Wrapper = styled.section`
@@ -13,7 +12,7 @@ export const Title = styled.h1`
   font-weight: 400;
   font-size: 18px;
   line-height: 120%;
-  color: ${color.brandColorPrimary};
+  color: ${(props) => props.theme.color.brandColorPrimary};
   margin-bottom: 24px;
 
   @media (min-width: 992px) {
@@ -42,7 +41,7 @@ export const CardTitleWrapper = styled.div`
 `;
 
 export const CardTitle = styled.h2`
-  font-family: ${fontFamily.rubik};
+  font-family: ${(props) => props.theme.font.rubik};
   font-size: 20px;
   margin-bottom: 4px;
   font-weight: 500;
@@ -50,7 +49,7 @@ export const CardTitle = styled.h2`
   @media (min-width: 992px) {
     font-size: 24px;
     line-height: 120%;
-    color: ${color.blueGray900};
+    color: ${(props) => props.theme.color.blueGray900};
   }
 `;
 
@@ -58,7 +57,7 @@ export const CardSubtitle = styled.p`
   font-weight: 400;
   font-size: 14px;
   line-height: 150%;
-  color: ${color.blueGray400};
+  color: ${(props) => props.theme.color.blueGray400};
 
   @media (min-width: 992px) {
     font-size: 16px;

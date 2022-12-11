@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { color } from '../../shared/styles/tokens';
 
 export const Navbar = styled.div`
   padding: 16px;
-  background-color: ${color.neutralWhite};
+  background-color: ${(props) => props.theme.color.neutralWhite};
   margin-bottom: 32px;
   height: 56px;
 

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { color } from '../../shared/styles/tokens';
 
 export const StyledReachDate = styled.div`
   display: flex;
@@ -13,7 +12,7 @@ export const Label = styled.label`
   font-weight: 400;
   font-size: 12px;
   line-height: 150%;
-  color: ${color.blueGray900};
+  color: ${(props) => props.theme.color.blueGray900};
   margin-bottom: 4px;
 
   @media (min-width: 992px) {
@@ -25,13 +24,13 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid ${color.blueGray50};
+  border: 1px solid ${(props) => props.theme.color.blueGray50};
   font-weight: 500;
   font-size: 24px;
   line-height: 120%;
   height: 56px;
   border-radius: 4px;
-  color: ${color.blueGray600};
+  color: ${(props) => props.theme.color.blueGray600};
   width: 100%;
 
   @media (min-width: 992px) {
@@ -74,10 +73,10 @@ export const DateWrapper = styled.span`
 `;
 
 export const Month = styled.p`
-  color: ${color.blueGray900};
+  color: ${(props) => props.theme.color.blueGray900};
   font-weight: 600;
 `;
 
 export const Year = styled.p`
-  color: ${color.blueGray400};
+  color: ${(props) => props.theme.color.blueGray400};
 `;

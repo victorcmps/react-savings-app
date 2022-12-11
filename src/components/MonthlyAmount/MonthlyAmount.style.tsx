@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import { color, fontFamily } from '../../shared/styles/tokens';
 
 export const StyledMonthlyAmount = styled.div`
-  border: 1px solid ${color.blueGray50};
+  border: 1px solid ${(props) => props.theme.color.blueGray50};
   border-radius: 8px;
 `;
 
@@ -21,7 +20,7 @@ export const Title = styled.h3`
   font-weight: 400;
   font-size: 18px;
   line-height: 120%;
-  color: ${color.blueGray900};
+  color: ${(props) => props.theme.color.blueGray900};
 
   @media (min-width: 992px) {
     font-size: 20px;
@@ -29,12 +28,12 @@ export const Title = styled.h3`
 `;
 
 export const Amount = styled.h3`
-  font-family: ${fontFamily.rubik};
+  font-family: ${(props) => props.theme.font.rubik};
   font-weight: 500;
   font-size: 32px;
   line-height: 120%;
   font-size: 24px;
-  color: ${color.brandColorSecondary};
+  color: ${(props) => props.theme.color.brandColorSecondary};
 
   @media (min-width: 992px) {
     font-size: 32px;
@@ -42,14 +41,14 @@ export const Amount = styled.h3`
 `;
 
 export const AmountDetail = styled.div`
-  background-color: ${color.blueGray10};
+  background-color: ${(props) => props.theme.color.blueGray10};
   padding: 24px 32px;
 `;
 
 export const AmountDetailText = styled.p`
   font-weight: 400;
   font-size: 12px;
-  color: ${color.blueGray900};
+  color: ${(props) => props.theme.color.blueGray900};
   text-align: center;
   line-height: 133%;
 
