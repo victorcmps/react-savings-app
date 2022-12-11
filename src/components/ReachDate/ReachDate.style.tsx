@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, fontFamily } from '../../shared/styles/tokens';
+import { color } from '../../shared/styles/tokens';
 
 export const StyledReachDate = styled.div`
   display: flex;
