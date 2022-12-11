@@ -9,6 +9,11 @@ type ButtonProps = {
 
 export function Button(props: ButtonProps): ReactElement {
   return (
-    <ButtonStyle className={props.className}>{props.children}</ButtonStyle>
+    <ButtonStyle
+      onClick={(event) => event.preventDefault()}
+      className={props.className}
+    >
+      {props.children}
+    </ButtonStyle>
   );
 }

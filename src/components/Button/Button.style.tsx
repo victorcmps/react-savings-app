@@ -13,4 +13,11 @@ export const ButtonStyle = styled.button`
   display: block;
   width: 320px;
   height: 56px;
+  border: 0;
+  transition: 0.2s background-color;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${color.brandColorSecondary};
+  }
 `;
