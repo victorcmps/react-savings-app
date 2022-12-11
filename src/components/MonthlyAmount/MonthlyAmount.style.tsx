@@ -49,9 +49,9 @@ export const AmountDetail = styled.div`
 export const AmountDetailText = styled.p`
   font-weight: 400;
   font-size: 12px;
-  line-height: 16px;
   color: ${color.blueGray900};
   text-align: center;
+  line-height: 133%;
 
   @media (min-width: 992px) {
     text-align: left;
