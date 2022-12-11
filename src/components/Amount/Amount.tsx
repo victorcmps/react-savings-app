@@ -1,21 +1,35 @@
-import { ReactElement } from 'react';
+import { FormEvent, ReactElement } from 'react';
 import dollarIcon from '../../assets/icons/dollar-sign.svg';
-import {
-  AmountWrapper,
-  Label,
-  InputWrapper,
-  Icon,
-  Input,
-} from './Amount.style';
+import { formatCurrency, formatOnlyNumbers } from '../../utils';
+import * as SC from './Amount.style';
 
-export function Amount(): ReactElement {
+type AmountProps = {
+  amount: number;
+  onAmountChange: (amount: number) => void;
+};
+
+export function Amount(props: AmountProps): ReactElement {
+  const handleOnInput = (event: FormEvent<HTMLInputElement>): void => {
+    const valueFormatted = formatOnlyNumbers(
+      (event.target as HTMLInputElement).value
+    );
+    props.onAmountChange(Number(valueFormatted));
+  };
+
   return (
-    <AmountWrapper>
-      <Label htmlFor="amount">Total amount</Label>
-      <InputWrapper>
-        <Icon aria-hidden src={dollarIcon} />
-        <Input id="amount" name="savingsGoal" defaultValue={`25,000`} />
-      </InputWrapper>
-    </AmountWrapper>
+    <SC.AmountWrapper>
+      <SC.Label htmlFor="amount">Total amount</SC.Label>
+      <SC.InputWrapper>
+        <SC.Icon aria-hidden src={dollarIcon} />
+        <SC.Input
+          onInput={(event) => {
+            handleOnInput(event);
+          }}
+          id="amount"
+          name="savingsGoal"
+          value={formatCurrency(props.amount)}
+        />
+      </SC.InputWrapper>
+    </SC.AmountWrapper>
   );
 }
