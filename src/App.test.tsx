@@ -1,8 +1,8 @@
 import { App } from './App';
 import { render } from '@testing-library/react';
 
-  describe('using testing library', () => {
-    it('returns the text', () => {
+  describe('AppComponent', () => {
+    it('should be defined', () => {
       const component = render(<App />);
 
       expect(component).toBeDefined();
