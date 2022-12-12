@@ -1,8 +1,8 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useMemo, useState } from 'react';
 import { Amount } from '../components/Amount/Amount';
-import buyAHouseIcon from '../assets/icons/buy-a-house.svg';
 import { ReachDate } from '../components/ReachDate/ReachDate';
 import { MonthlyAmount } from '../components/MonthlyAmount/MonthlyAmount';
+import buyAHouseIcon from '../assets/icons/buy-a-house.svg';
 import * as SC from './SavingsGoalSimulator.styles';
 import { getNextOrPrevDate } from '../utils';
 
@@ -21,6 +21,11 @@ export function SavingsGoalSimulator(): ReactElement {
   const onAmountChange = (amount: number) => {
     setAmount(amount);
   };
+
+  const calcMonthlyAmount = useMemo(() => {
+    const calc = amount / monthCounter;
+    return calc;
+  }, [amount, monthCounter]);
 
   return (
     <SC.Wrapper>
@@ -42,6 +47,7 @@ export function SavingsGoalSimulator(): ReactElement {
           </SC.InputWrapper>
           <MonthlyAmount
             monthCounter={monthCounter}
+            monthlyAmount={calcMonthlyAmount}
             date={date}
             amount={amount}
           ></MonthlyAmount>

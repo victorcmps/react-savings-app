@@ -6,21 +6,15 @@ type MonthlyAmountProps = {
   date: Date;
   amount: number;
   monthCounter: number;
+  monthlyAmount: number;
 };
 
 export function MonthlyAmount(props: MonthlyAmountProps): ReactElement {
-  const calcMonthlyAmount = (amount: number, monthCounter: number) => {
-    const calc = amount / monthCounter;
-    return formatCurrency(calc);
-  };
-
   return (
     <SC.StyledMonthlyAmount>
       <SC.AmountInfo>
         <SC.Title>Monthly amount</SC.Title>
-        <SC.Amount>
-          ${calcMonthlyAmount(props.amount, props.monthCounter)}
-        </SC.Amount>
+        <SC.Amount>${formatCurrency(props.monthlyAmount)}</SC.Amount>
       </SC.AmountInfo>
       <SC.AmountDetail>
         <SC.AmountDetailText>
