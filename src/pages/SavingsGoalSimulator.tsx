@@ -3,7 +3,7 @@ import { Amount } from '../components/Amount/Amount';
 import { ReachDate } from '../components/ReachDate/ReachDate';
 import { MonthlyAmount } from '../components/MonthlyAmount/MonthlyAmount';
 import buyAHouseIcon from '../assets/icons/buy-a-house.svg';
-import * as SC from './SavingsGoalSimulator.styles';
+import * as SC from './SavingsGoalSimulator.style';
 import { getNextOrPrevDate } from '../utils';
 
 export function SavingsGoalSimulator(): ReactElement {
