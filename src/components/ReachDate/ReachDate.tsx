@@ -59,12 +59,6 @@ export function ReachDate(props: ReachDateProps): ReactElement {
         >
           <SC.Month>{formatMonth(props.value)}</SC.Month>
           <SC.Year>{props.value.getFullYear()}</SC.Year>
-          <input
-            type="hidden"
-            data-testid="datepicker"
-            name="savingGoal"
-            value={props.value.toString()}
-          />
         </SC.DateWrapper>
         <SC.Button
           data-testid="button-next"
