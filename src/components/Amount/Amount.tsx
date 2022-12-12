@@ -22,7 +22,7 @@ export function Amount(props: AmountProps): ReactElement {
       <SC.InputWrapper>
         <SC.Icon aria-hidden src={dollarIcon} />
         <SC.Input
-          onInput={(event) => {
+          onChange={(event) => {
             handleOnInput(event);
           }}
           id="amount"
