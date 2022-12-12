@@ -36,23 +36,21 @@ describe('ReachDate', () => {
       expect(month).toBeInTheDocument();
       expect(year).toBeInTheDocument();
     });
+
+    it('should check if left button is disabled', async () => {
+      render(<Component value={date} onMonthChange={onMonthChange} />);
+      const element = await screen.findByTestId('button-prev');
+
+      expect(element).toHaveAttribute("data-disabled", "true");
+    });
   });
 
   describe('Mouse Actions', () => {
-    it('should NOT fire event on button click if is disabled', async () => {
-      render(<Component value={date} onMonthChange={onMonthChange} />);
-      const button = await screen.findByTestId('button-prev');
-      userEvent.click(button);
-
-      expect(button.parentElement).toHaveAttribute('data-disabled', 'true');
-      expect(onMonthChange).not.toHaveBeenCalled();
-    });
-
     it('should fire event on click in the left button', async () => {
       const dateIncreased = getNextOrPrevDate(date, false);
       render(<Component value={dateIncreased} onMonthChange={onMonthChange} />);
       const button = await screen.findByTestId('button-prev');
-      userEvent.click(button);
+      await userEvent.click(button);
 
       expect(onMonthChange).toHaveBeenCalled();
     });
@@ -60,22 +58,13 @@ describe('ReachDate', () => {
     it('should fire event on click in the right button', async () => {
       render(<Component value={date} onMonthChange={onMonthChange} />);
       const button = await screen.findByTestId('button-next');
-      userEvent.click(button);
+      await userEvent.click(button);
 
       expect(onMonthChange).toHaveBeenCalled();
     });
   });
 
   describe('Keyboard Actions', () => {
-    it('should NOT fire event on left arrow press if is disabled', async () => {
-      render(<Component value={date} onMonthChange={onMonthChange} />);
-      const element = await screen.findByTestId('reach-date');
-      element.focus();
-      fireEvent.keyDown(element, { key: 'ArrowLeft' });
-
-      expect(onMonthChange).not.toHaveBeenCalled();
-    });
-
     it('should fire event on user pressing left arrow', async () => {
       const dateIncreased = getNextOrPrevDate(date, false);
       render(<Component value={dateIncreased} onMonthChange={onMonthChange} />);

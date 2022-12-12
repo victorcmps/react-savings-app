@@ -31,20 +31,17 @@ export function ReachDate(props: ReachDateProps): ReactElement {
   };
 
   return (
-    <SC.StyledReachDate
-      data-testid="reach-date"
-      onKeyDown={(event) => handleKeyPress(event)}
-    >
+    <SC.StyledReachDate data-testid="reach-date" onKeyDown={(event) => handleKeyPress(event)}>
       <SC.Label>Reach goal by</SC.Label>
       <SC.Wrapper tabIndex={0}>
         <SC.Button
+          data-testid="button-prev"
           onClick={(event) =>
             !isPreviousDisabled && props.onMonthChange(true, event)
           }
           data-disabled={isPreviousDisabled}
         >
           <SC.ButtonIcon
-            data-testid="button-prev"
             width={24}
             height={24}
             aria-hidden
