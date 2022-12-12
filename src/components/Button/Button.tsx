@@ -8,9 +8,7 @@ type ButtonProps = {
 
 export function Button(props: ButtonProps): ReactElement {
   return (
-    <SC.ButtonStyle
-      className={props.className}
-    >
+    <SC.ButtonStyle className={props.className}>
       {props.children}
     </SC.ButtonStyle>
   );
