@@ -10,6 +10,7 @@ export const AmountInfo = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 24px;
+  word-break: break-word;
 
   @media (min-width: 992px) {
     padding: 24px 32px 16px 32px;
