@@ -14,7 +14,7 @@ export function MonthlyAmount(props: MonthlyAmountProps): ReactElement {
     <SC.StyledMonthlyAmount>
       <SC.AmountInfo>
         <SC.Title>Monthly amount</SC.Title>
-        <SC.Amount>${formatCurrency(props.monthlyAmount)}</SC.Amount>
+        <SC.Amount data-testid="monthly-amount">${formatCurrency(props.monthlyAmount)}</SC.Amount>
       </SC.AmountInfo>
       <SC.AmountDetail>
         <SC.AmountDetailText>

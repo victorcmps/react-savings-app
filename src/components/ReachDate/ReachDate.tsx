@@ -31,7 +31,10 @@ export function ReachDate(props: ReachDateProps): ReactElement {
   };
 
   return (
-    <SC.StyledReachDate data-testid="reach-date" onKeyDown={(event) => handleKeyPress(event)}>
+    <SC.StyledReachDate
+      data-testid="reach-date"
+      onKeyDown={(event) => handleKeyPress(event)}
+    >
       <SC.Label>Reach goal by</SC.Label>
       <SC.Wrapper tabIndex={0}>
         <SC.Button

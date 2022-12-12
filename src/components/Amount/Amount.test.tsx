@@ -31,13 +31,15 @@ describe('Amount', () => {
   });
 
   describe('onInput event tests', () => {
-    it('should fire onAmountChange method when user types', async () => {
-      let amount = 25000;
+    it('should fire onAmountChange passing the new value when user types', async () => {
+      const amount = 25000;
+      const numberToInsert = 5;
       render(<Component amount={amount} onAmountChange={onAmountChange} />);
       const input = await screen.findByLabelText('Total amount');
       input.focus();
-      await userEvent.keyboard('Some text');
-      expect(onAmountChange).toHaveBeenCalled();
+      await userEvent.keyboard(`{Home}${numberToInsert}`);
+
+      expect(onAmountChange.mock.calls[0][0].toString()).toBe(`${numberToInsert}${amount}`);
     });
   });
 });

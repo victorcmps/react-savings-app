@@ -37,11 +37,12 @@ describe('ReachDate', () => {
       expect(year).toBeInTheDocument();
     });
 
-    it('should check if left button is disabled', async () => {
+    it('should check if button disabled and has pointer-events:none preventing from click', async () => {
       render(<Component value={date} onMonthChange={onMonthChange} />);
-      const element = await screen.findByTestId('button-prev');
+      const button = await screen.findByTestId('button-prev');
 
-      expect(element).toHaveAttribute("data-disabled", "true");
+      expect(button).toHaveAttribute('data-disabled', 'true');
+      expect(getComputedStyle(button).pointerEvents).toBe('none');
     });
   });
 
@@ -65,6 +66,15 @@ describe('ReachDate', () => {
   });
 
   describe('Keyboard Actions', () => {
+    it('should NOT fire event on left arrow press if is disabled', async () => {
+      render(<Component value={date} onMonthChange={onMonthChange} />);
+      const element = await screen.findByTestId('reach-date');
+      element.focus();
+      fireEvent.keyDown(element, { key: 'ArrowLeft' });
+
+      expect(onMonthChange).not.toHaveBeenCalled();
+    });
+
     it('should fire event on user pressing left arrow', async () => {
       const dateIncreased = getNextOrPrevDate(date, false);
       render(<Component value={dateIncreased} onMonthChange={onMonthChange} />);
