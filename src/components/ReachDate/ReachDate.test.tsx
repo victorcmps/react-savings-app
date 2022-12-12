@@ -5,9 +5,9 @@ import theme from '../../theme';
 import { ThemeProvider } from 'styled-components';
 import { getNextOrPrevDate } from '../../utils';
 
-let date = getNextOrPrevDate(new Date(), false);
-let onMonthChange = jest.fn();
-type componentProps = {
+const date = getNextOrPrevDate(new Date(), false);
+const onMonthChange = jest.fn();
+type ComponentProps = {
   value: Date;
   onMonthChange: (
     isPreviousMonth: boolean,
@@ -17,7 +17,7 @@ type componentProps = {
   ) => void;
 };
 
-function Component(props: componentProps) {
+function Component(props: ComponentProps) {
   return (
     <ThemeProvider theme={theme}>
       <ReachDate value={props.value} onMonthChange={props.onMonthChange} />

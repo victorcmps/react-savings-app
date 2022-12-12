@@ -24,7 +24,7 @@
     "test:coverage": "react-scripts test --env=jsdom --watchAll=false --coverage",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.{ts,tsx}",
-    "lint": "eslint './src/**/*.{ts,tsx}' --max-warnings=0"
+    "lint": "eslint src --ext .jsx,.tsx"
   },
   "eslintConfig": {
     "extends": [

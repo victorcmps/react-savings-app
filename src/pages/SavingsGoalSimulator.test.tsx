@@ -21,7 +21,9 @@ describe('SavingsGoalSimulator', () => {
   const getData = async () => {
     date = await screen.findByText(formatMonth(dateMock(monthCounter)));
     year = await screen.findByText(dateMock(monthCounter).getFullYear());
-    monthlyDetails = await screen.findByText(`${monthCounter} monthly deposits`);
+    monthlyDetails = await screen.findByText(
+      `${monthCounter} monthly deposits`
+    );
   };
 
   it('should advance when clicked in ReachDate', async () => {
@@ -47,7 +49,7 @@ describe('SavingsGoalSimulator', () => {
     );
     const buttonPrev = await screen.findByTestId('button-prev');
     const buttonNext = await screen.findByTestId('button-next');
-    
+
     await userEvent.click(buttonNext);
     await userEvent.click(buttonPrev);
     monthCounter--;

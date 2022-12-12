@@ -1,18 +1,17 @@
-import userEvent from '@testing-library/user-event';
 import theme from '../../theme';
 import { ThemeProvider } from 'styled-components';
 import { MonthlyAmount } from './MonthlyAmount';
 import { render, screen } from '@testing-library/react';
 import { formatCurrency, formatMonth, getNextOrPrevDate } from '../../utils';
 
-type MonthlyAmountProps = {
+type ComponentProps = {
   date: Date;
   amount: number;
   monthCounter: number;
   monthlyAmount: number;
 };
 
-function Component(props: MonthlyAmountProps) {
+function Component(props: ComponentProps) {
   return (
     <ThemeProvider theme={theme}>
       <MonthlyAmount

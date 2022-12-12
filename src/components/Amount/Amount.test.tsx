@@ -1,18 +1,18 @@
 import { Amount } from './Amount';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import theme from '../../theme';
 import { ThemeProvider } from 'styled-components';
 import { formatCurrency } from '../../utils';
 
-type componentProps = {
+type ComponentProps = {
   amount: number;
   onAmountChange: (amount: number) => void;
 };
 
-let onAmountChange = jest.fn();
+const onAmountChange = jest.fn();
 
-function Component(props: componentProps) {
+function Component(props: ComponentProps) {
   return (
     <ThemeProvider theme={theme}>
       <Amount amount={props.amount} onAmountChange={props.onAmountChange} />
@@ -39,7 +39,9 @@ describe('Amount', () => {
       input.focus();
       await userEvent.keyboard(`{Home}${numberToInsert}`);
 
-      expect(onAmountChange.mock.calls[0][0].toString()).toBe(`${numberToInsert}${amount}`);
+      expect(onAmountChange.mock.calls[0][0].toString()).toBe(
+        `${numberToInsert}${amount}`
+      );
     });
   });
 });

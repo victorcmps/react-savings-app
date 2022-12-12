@@ -3,12 +3,12 @@ import { ThemeProvider } from 'styled-components';
 import { Card } from './Card';
 import { render, screen } from '@testing-library/react';
 
-type componentProps = {
+type ComponentProps = {
   children: React.ReactNode;
   className?: string;
 };
 
-function Component(props: componentProps) {
+function Component(props: ComponentProps) {
   return (
     <ThemeProvider theme={theme}>
       <Card className={props.className}>{props.children}</Card>
@@ -17,17 +17,25 @@ function Component(props: componentProps) {
 }
 
 describe('Card', () => {
-    it('should render with children', async () => {
-      render(<Component><p>This is a paragraph</p></Component>);
-      const card = await screen.findByText('This is a paragraph');
+  it('should render with children', async () => {
+    render(
+      <Component>
+        <p>This is a paragraph</p>
+      </Component>
+    );
+    const card = await screen.findByText('This is a paragraph');
 
-      expect(card).toBeInTheDocument();
-    });
+    expect(card).toBeInTheDocument();
+  });
 
-    it('should render with children and className', async () => {
-      render(<Component className="cardTest"><p>This is a paragraph</p></Component>);
-      const card = await screen.findByText('This is a paragraph');
+  it('should render with children and className', async () => {
+    render(
+      <Component className="cardTest">
+        <p>This is a paragraph</p>
+      </Component>
+    );
+    const card = await screen.findByText('This is a paragraph');
 
-      expect(card.parentElement).toHaveClass('cardTest');
-    });
+    expect(card.parentElement).toHaveClass('cardTest');
+  });
 });

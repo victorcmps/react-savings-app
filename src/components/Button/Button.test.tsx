@@ -3,12 +3,12 @@ import { ThemeProvider } from 'styled-components';
 import { Button } from './Button';
 import { render, screen } from '@testing-library/react';
 
-type componentProps = {
+type ComponentProps = {
   children: React.ReactNode;
   className?: string;
 };
 
-function Component(props: componentProps) {
+function Component(props: ComponentProps) {
   return (
     <ThemeProvider theme={theme}>
       <Button className={props.className}>{props.children}</Button>
@@ -17,17 +17,17 @@ function Component(props: componentProps) {
 }
 
 describe('Button', () => {
-    it('should render with children', async () => {
-      render(<Component>Button</Component>);
-      const button = await screen.findByText('Button');
+  it('should render with children', async () => {
+    render(<Component>Button</Component>);
+    const button = await screen.findByText('Button');
 
-      expect(button).toBeInTheDocument();
-    });
+    expect(button).toBeInTheDocument();
+  });
 
-    it('should render with children and className', async () => {
-      render(<Component className="test">Button</Component>);
-      const button = await screen.findByText('Button');
+  it('should render with children and className', async () => {
+    render(<Component className="test">Button</Component>);
+    const button = await screen.findByText('Button');
 
-      expect(button).toHaveClass('test');
-    });
+    expect(button).toHaveClass('test');
+  });
 });
