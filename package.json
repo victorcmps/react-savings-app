@@ -1,6 +1,9 @@
 {
   "name": "frontend-take-home-assignment",
   "version": "0.1.0",
+  "jest": {
+    "coveragePathIgnorePatterns": ["./index.tsx"]
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -55,4 +58,5 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.3.1"
   }
+  
 }
