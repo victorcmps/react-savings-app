@@ -25,6 +25,7 @@ export function Amount(props: AmountProps): ReactElement {
           onChange={(event) => {
             handleOnInput(event);
           }}
+          inputMode="numeric"
           id="amount"
           name="savingsGoal"
           value={formatCurrency(props.amount)}
