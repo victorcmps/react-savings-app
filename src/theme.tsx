@@ -6,9 +6,6 @@ const defaultTheme: DefaultTheme = {
     ...Tokens.color,
   },
   font: { ...Tokens.fontFamily },
-  spacing: {
-    ...Tokens.spacing,
-  },
 };
 
 export default defaultTheme;
