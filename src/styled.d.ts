@@ -18,16 +18,5 @@ declare module 'styled-components' {
       workSans: string;
       rubik: string;
     };
-    spacing: {
-      '5xl': number;
-      '4xl': number;
-      '3xl': number;
-      '2xl': number;
-      xl: number;
-      lg: number;
-      md: number;
-      sm: number;
-      xs: number;
-    };
   }
 }
