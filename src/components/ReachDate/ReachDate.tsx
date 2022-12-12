@@ -19,7 +19,7 @@ export function ReachDate(props: ReachDateProps): ReactElement {
     props.value.toString() === getNextOrPrevDate(new Date(), false).toString();
 
   const handleKeyPress = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    switch (event.code) {
+    switch (event.key) {
       case 'ArrowLeft':
         if (isPreviousDisabled) break;
         props.onMonthChange(true, event);
@@ -31,7 +31,10 @@ export function ReachDate(props: ReachDateProps): ReactElement {
   };
 
   return (
-    <SC.StyledReachDate onKeyDown={(event) => handleKeyPress(event)}>
+    <SC.StyledReachDate
+      data-testid="reach-date"
+      onKeyDown={(event) => handleKeyPress(event)}
+    >
       <SC.Label>Reach goal by</SC.Label>
       <SC.Wrapper tabIndex={0}>
         <SC.Button
@@ -41,6 +44,7 @@ export function ReachDate(props: ReachDateProps): ReactElement {
           data-disabled={isPreviousDisabled}
         >
           <SC.ButtonIcon
+            data-testid="button-prev"
             width={24}
             height={24}
             aria-hidden
@@ -57,12 +61,13 @@ export function ReachDate(props: ReachDateProps): ReactElement {
           <SC.Year>{props.value.getFullYear()}</SC.Year>
           <input
             type="hidden"
-            id="datepicker"
+            data-testid="datepicker"
             name="savingGoal"
             value={props.value.toString()}
           />
         </SC.DateWrapper>
         <SC.Button
+          data-testid="button-next"
           onClick={(event) => {
             props.onMonthChange(false, event);
           }}
