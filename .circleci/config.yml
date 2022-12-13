@@ -1,7 +1,6 @@
 version: 2.1
 jobs:
   test_and_lint:
-
     docker:
       - image: circleci/node:latest-browsers
     working_directory: /home/circleci/frontend-take-home-assignment
@@ -28,6 +27,25 @@ jobs:
               name: Run tests
               command: |
                 npm run test
+  docs-deploy:
+    docker:
+      - image: node:8.10.0
+    steps:
+      - checkout
+      - attach_workspace:
+          at: build
+      - run:
+          name: Install and configure dependencies
+          command: |
+            npm install -g --silent gh-pages@2.0.1
+            git config user.email "joao.victor_55@hotmail.com"
+            git config user.name "victorcmps"
+      - add_ssh_keys:
+          fingerprints:
+            - "c7:e8:c6:68:bf:f2:06:6f:e9:73:18:56:5f:2a:db:ca"
+      - run:
+          name: Deploy docs to gh-pages branch
+          command: gh-pages --dotfiles --message "[skip ci] Updates" --dist build
 
 workflows:
   version: 2
