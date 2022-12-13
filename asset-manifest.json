@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.js": "/static/js/main.4e389b01.chunk.js",
+    "main.js.map": "/static/js/main.4e389b01.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.e266b733.js",
+    "runtime-main.js.map": "/static/js/runtime-main.e266b733.js.map",
+    "static/js/2.5f783e5a.chunk.js": "/static/js/2.5f783e5a.chunk.js",
+    "static/js/2.5f783e5a.chunk.js.map": "/static/js/2.5f783e5a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.5f783e5a.chunk.js.LICENSE.txt": "/static/js/2.5f783e5a.chunk.js.LICENSE.txt",
+    "static/media/buy-a-house.5642fcae.svg": "/static/media/buy-a-house.5642fcae.svg",
+    "static/media/chevron-left.4e4bfb11.svg": "/static/media/chevron-left.4e4bfb11.svg",
+    "static/media/chevron-right.a042edbb.svg": "/static/media/chevron-right.a042edbb.svg",
+    "static/media/dollar-sign.abb7953b.svg": "/static/media/dollar-sign.abb7953b.svg",
+    "static/media/logo.14023c19.svg": "/static/media/logo.14023c19.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e266b733.js",
+    "static/js/2.5f783e5a.chunk.js",
+    "static/js/main.4e389b01.chunk.js"
+  ]
+}
