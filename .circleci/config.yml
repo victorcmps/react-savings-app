@@ -52,4 +52,5 @@ workflows:
   pipeline:
     jobs:
       - test_and_lint
+      - docs-deploy
 
