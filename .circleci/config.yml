@@ -44,13 +44,11 @@ jobs:
           fingerprints:
             - "c7:e8:c6:68:bf:f2:06:6f:e9:73:18:56:5f:2a:db:ca"
       - run:
-          name: build
+          name: Deploy docs to gh-pages branch
           command: |
             npm install
             npm run build
-      - run:
-          name: Deploy docs to gh-pages branch
-          command: gh-pages --dotfiles --message "[skip ci] Updates" -d build
+            gh-pages --dotfiles --message "[skip ci] Updates" -d build
 
 workflows:
   version: 2
