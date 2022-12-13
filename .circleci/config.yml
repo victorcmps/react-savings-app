@@ -55,5 +55,4 @@ workflows:
   pipeline:
     jobs:
       - test_and_lint
-      - build_and_deploy
 
