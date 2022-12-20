@@ -3,8 +3,11 @@
  * @param {Date} date - The date
  * @returns {string} Returns the name
  */
-export function formatMonth(date: Date): string {
-  return date.toLocaleString('en-US', { month: 'long' });
+export function formatMonth(
+  date: Date,
+  size: 'numeric' | '2-digit' | 'long' | 'short' | 'narrow' | undefined = 'long'
+): string {
+  return date.toLocaleString('en-US', { month: size });
 }
 
 /**

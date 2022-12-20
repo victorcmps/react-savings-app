@@ -12,3 +12,8 @@ export const CardStyle = styled.div`
     width: 560px;
   }
 `;
+
+export const Icon = styled.img`
+  display: flex;
+  align-items: center;
+`;
