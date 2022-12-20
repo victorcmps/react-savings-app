@@ -27,3 +27,17 @@ export function getNextOrPrevDate(date: Date, isPreviousMonth: boolean): Date {
     1
   );
 }
+
+/**
+ * Returns the distance between two months.
+ * @param {Date} startDate - The first date
+ * @param {Date} endDate - The second date
+ * @returns {number} Returns difference between months
+ */
+export function monthDiff(startDate: Date, endDate: Date): number {
+  return (
+    startDate.getMonth() -
+    endDate.getMonth() +
+    12 * (startDate.getFullYear() - endDate.getFullYear())
+  );
+}
