@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const ButtonStyle = styled.button`
+export const ButtonStyle = styled(Link)`
   font-family: Work Sans;
   font-size: 16px;
   font-weight: 600;
@@ -14,9 +15,15 @@ export const ButtonStyle = styled.button`
   height: 100%;
   border: 0;
   transition: 0.2s background-color;
-  cursor: pointer;
+  text-align: center;
 
-  &:hover {
-    background-color: ${(props) => props.theme.color.brandColorSecondary};
+  &[data-variant='secondary'] {
+    background-color: ${(props) => props.theme.color.blueGray10};
+    color: ${(props) => props.theme.color.brandColorSecondary};
+  }
+
+  &[data-disabled='true'] {
+    pointer-events: none;
+    opacity: 0.2;
   }
 `;

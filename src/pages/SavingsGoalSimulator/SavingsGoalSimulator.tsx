@@ -7,6 +7,7 @@ import * as SC from './SavingsGoalSimulator.style';
 import { getNextOrPrevDate, monthDiff } from '../../utils';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Link, useParams } from 'react-router-dom';
+import dashboardMap from '../../shared/maps/DashboardMap';
 
 export function SavingsGoalSimulator(): ReactElement {
   const [date, setDate] = useState(getNextOrPrevDate(new Date(), false));
@@ -49,9 +50,11 @@ export function SavingsGoalSimulator(): ReactElement {
       </SC.Title>
       <SC.CardSimulator>
         <SC.CardTitleWrapper>
-          <img width={64} height={64} src={buyAHouseIcon} alt="" aria-hidden />
+          {dashboardMap.find((map) => map.slug === routeSlug)?.icon}
           <span>
-            <SC.CardTitle>Buy a house</SC.CardTitle>
+            <SC.CardTitle>
+              {dashboardMap.find((map) => map.slug === routeSlug)?.title}
+            </SC.CardTitle>
             <SC.CardSubtitle>Saving goal</SC.CardSubtitle>
           </span>
         </SC.CardTitleWrapper>
@@ -66,15 +69,15 @@ export function SavingsGoalSimulator(): ReactElement {
             date={date}
             amount={amount}
           ></MonthlyAmount>
-          <Link to="/">
-            <SC.FormButton
-              onClick={() => {
-                setKey(routeSlug, { amount: amount, date: date });
-              }}
-            >
-              Confirm
-            </SC.FormButton>
-          </Link>
+          <SC.FormButton
+            to="/"
+            disabled={amount === 0}
+            onClick={() => {
+              setKey(routeSlug, { amount: amount, date: date });
+            }}
+          >
+            Confirm
+          </SC.FormButton>
         </SC.Form>
       </SC.CardSimulator>
     </SC.Wrapper>

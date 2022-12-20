@@ -56,4 +56,8 @@ export const CardButton = styled(Button)`
   @media (min-width: 992px) {
     margin-top: 56px;
   }
+
+  &[data-variant='secondary'] {
+    margin-top: 16px;
+  }
 `;

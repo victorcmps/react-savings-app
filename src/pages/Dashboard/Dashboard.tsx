@@ -27,18 +27,19 @@ export function Dashboard(): ReactElement {
                 {item.icon}
                 <SC.CardHeaderTitle>{item.title}</SC.CardHeaderTitle>
               </SC.CardHeader>
-              {savedGoals[item.slug] && (
+              {savedGoals && savedGoals[item.slug] ? (
                 <>
                   <SavedGoal
                     amount={savedGoals[item.slug].amount}
                     date={new Date(savedGoals[item.slug].date)}
                   ></SavedGoal>
+                  <SC.CardButton to={`/${item.slug}`} variant="secondary">
+                    Edit goal
+                  </SC.CardButton>
                 </>
+              ) : (
+                <SC.CardButton to={`/${item.slug}`}>Setup goal</SC.CardButton>
               )}
-
-              <Link to={`/${item.slug}`}>
-                <SC.CardButton>Setup goal</SC.CardButton>
-              </Link>
             </SC.CardDashboard>
           );
         })}

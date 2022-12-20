@@ -11,4 +11,8 @@ export const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.font.workSans};
     background-color: ${(props) => props.theme.color.blueGray10};
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
