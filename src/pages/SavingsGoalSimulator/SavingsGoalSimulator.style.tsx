@@ -1,6 +1,6 @@
-import { Button } from '../components/Button/Button';
+import { Button } from '../../components/Button/Button';
 import styled from 'styled-components';
-import { Card } from '../components/Card/Card';
+import { Card } from '../../components/Card/Card';
 
 export const Wrapper = styled.section`
   display: grid;

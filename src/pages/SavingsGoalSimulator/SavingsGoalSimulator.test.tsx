@@ -1,9 +1,9 @@
 import { SavingsGoalSimulator } from './SavingsGoalSimulator';
 import { render, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import theme from '../theme';
+import theme from '../../theme';
 import userEvent from '@testing-library/user-event';
-import { formatMonth } from '../utils';
+import { formatMonth } from '../../utils';
 
 describe('SavingsGoalSimulator', () => {
   let monthCounter = 1;

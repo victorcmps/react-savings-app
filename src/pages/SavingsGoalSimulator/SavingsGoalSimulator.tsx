@@ -1,15 +1,30 @@
-import { ReactElement, useMemo, useState } from 'react';
-import { Amount } from '../components/Amount/Amount';
-import { ReachDate } from '../components/ReachDate/ReachDate';
-import { MonthlyAmount } from '../components/MonthlyAmount/MonthlyAmount';
-import buyAHouseIcon from '../assets/icons/buy-a-house.svg';
+import { ReactElement, useEffect, useMemo, useState } from 'react';
+import { Amount } from '../../components/Amount/Amount';
+import { ReachDate } from '../../components/ReachDate/ReachDate';
+import { MonthlyAmount } from '../../components/MonthlyAmount/MonthlyAmount';
+import buyAHouseIcon from '../../assets/icons/buy-a-house.svg';
 import * as SC from './SavingsGoalSimulator.style';
-import { getNextOrPrevDate } from '../utils';
+import { getNextOrPrevDate, monthDiff } from '../../utils';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { Link, useParams } from 'react-router-dom';
 
 export function SavingsGoalSimulator(): ReactElement {
   const [date, setDate] = useState(getNextOrPrevDate(new Date(), false));
   const [monthCounter, setMonthCounter] = useState(1);
-  const [amount, setAmount] = useState(25000);
+  const [amount, setAmount] = useState(0);
+  const [routeSlug, setRouteSlug] = useState('');
+  const { getKey, setKey } = useLocalStorage();
+  const { slug } = useParams();
+
+  useEffect(() => {
+    setRouteSlug(slug as string);
+    const data = getKey(routeSlug);
+    if (data) {
+      setAmount(data.amount);
+      setDate(new Date(data.date));
+      setMonthCounter(monthDiff(new Date(data.date), new Date()));
+    }
+  }, [routeSlug]);
 
   const onMonthChange = (isPreviousMonth: boolean) => {
     setDate(getNextOrPrevDate(date, isPreviousMonth));
@@ -51,7 +66,15 @@ export function SavingsGoalSimulator(): ReactElement {
             date={date}
             amount={amount}
           ></MonthlyAmount>
-          <SC.FormButton>Confirm</SC.FormButton>
+          <Link to="/">
+            <SC.FormButton
+              onClick={() => {
+                setKey(routeSlug, { amount: amount, date: date });
+              }}
+            >
+              Confirm
+            </SC.FormButton>
+          </Link>
         </SC.Form>
       </SC.CardSimulator>
     </SC.Wrapper>
