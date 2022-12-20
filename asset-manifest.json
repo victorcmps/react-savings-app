@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.js": "/react-savings-app/static/js/main.5b532096.chunk.js",
-    "main.js.map": "/react-savings-app/static/js/main.5b532096.chunk.js.map",
-    "runtime-main.js": "/react-savings-app/static/js/runtime-main.699df9a1.js",
-    "runtime-main.js.map": "/react-savings-app/static/js/runtime-main.699df9a1.js.map",
-    "static/js/2.63e338a5.chunk.js": "/react-savings-app/static/js/2.63e338a5.chunk.js",
-    "static/js/2.63e338a5.chunk.js.map": "/react-savings-app/static/js/2.63e338a5.chunk.js.map",
-    "index.html": "/react-savings-app/index.html",
-    "static/js/2.63e338a5.chunk.js.LICENSE.txt": "/react-savings-app/static/js/2.63e338a5.chunk.js.LICENSE.txt",
-    "static/media/build-an-emergency-fund.792dd545.svg": "/react-savings-app/static/media/build-an-emergency-fund.792dd545.svg",
-    "static/media/buy-a-car.882758c4.svg": "/react-savings-app/static/media/buy-a-car.882758c4.svg",
-    "static/media/chevron-left.4e4bfb11.svg": "/react-savings-app/static/media/chevron-left.4e4bfb11.svg",
-    "static/media/chevron-right.a042edbb.svg": "/react-savings-app/static/media/chevron-right.a042edbb.svg",
-    "static/media/dollar-sign.abb7953b.svg": "/react-savings-app/static/media/dollar-sign.abb7953b.svg",
-    "static/media/go-to-college.33f43c4a.svg": "/react-savings-app/static/media/go-to-college.33f43c4a.svg",
-    "static/media/have-a-baby.8640553d.svg": "/react-savings-app/static/media/have-a-baby.8640553d.svg",
-    "static/media/logo.14023c19.svg": "/react-savings-app/static/media/logo.14023c19.svg",
-    "static/media/take-a-vacation.90342a40.svg": "/react-savings-app/static/media/take-a-vacation.90342a40.svg",
-    "static/media/throw-a-wedding-party.d1bb88de.svg": "/react-savings-app/static/media/throw-a-wedding-party.d1bb88de.svg"
+    "main.js": "./static/js/main.27543391.chunk.js",
+    "main.js.map": "./static/js/main.27543391.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.a9f5d48a.js",
+    "runtime-main.js.map": "./static/js/runtime-main.a9f5d48a.js.map",
+    "static/js/2.9497171c.chunk.js": "./static/js/2.9497171c.chunk.js",
+    "static/js/2.9497171c.chunk.js.map": "./static/js/2.9497171c.chunk.js.map",
+    "index.html": "./index.html",
+    "static/js/2.9497171c.chunk.js.LICENSE.txt": "./static/js/2.9497171c.chunk.js.LICENSE.txt",
+    "static/media/build-an-emergency-fund.792dd545.svg": "./static/media/build-an-emergency-fund.792dd545.svg",
+    "static/media/buy-a-car.882758c4.svg": "./static/media/buy-a-car.882758c4.svg",
+    "static/media/chevron-left.4e4bfb11.svg": "./static/media/chevron-left.4e4bfb11.svg",
+    "static/media/chevron-right.a042edbb.svg": "./static/media/chevron-right.a042edbb.svg",
+    "static/media/dollar-sign.abb7953b.svg": "./static/media/dollar-sign.abb7953b.svg",
+    "static/media/go-to-college.33f43c4a.svg": "./static/media/go-to-college.33f43c4a.svg",
+    "static/media/have-a-baby.8640553d.svg": "./static/media/have-a-baby.8640553d.svg",
+    "static/media/logo.14023c19.svg": "./static/media/logo.14023c19.svg",
+    "static/media/take-a-vacation.90342a40.svg": "./static/media/take-a-vacation.90342a40.svg",
+    "static/media/throw-a-wedding-party.d1bb88de.svg": "./static/media/throw-a-wedding-party.d1bb88de.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.699df9a1.js",
-    "static/js/2.63e338a5.chunk.js",
-    "static/js/main.5b532096.chunk.js"
+    "static/js/runtime-main.a9f5d48a.js",
+    "static/js/2.9497171c.chunk.js",
+    "static/js/main.27543391.chunk.js"
   ]
 }
