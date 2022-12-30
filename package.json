@@ -1,5 +1,5 @@
 {
-  "name": "frontend-take-home-assignment",
+  "name": "savings-goal",
   "version": "0.1.0",
   "jest": {
     "coveragePathIgnorePatterns": [
