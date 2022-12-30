@@ -14,7 +14,7 @@ function Component() {
 describe('Menu', () => {
   it('should render component', async () => {
     render(<Component />);
-    const menu = await screen.findByAltText('Origin Logo');
+    const menu = await screen.findByAltText('Logo');
 
     expect(menu).toBeInTheDocument();
   });
